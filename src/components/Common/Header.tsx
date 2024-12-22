@@ -71,7 +71,7 @@ const Header = () => {
       className={`${
         scrolling
           ? "bg-[#0B0F12] fixed dark:bg-slate-800 w-full z-40"
-          : "w-full z-40 fixed bg-[#0B0F12]"
+          : "w-full z-40 fixed "
       }`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -93,10 +93,27 @@ const Header = () => {
           {/* Second Div */}
           <div className="  flex-1 flex justify-end items-center">
             <div className="flex justify-center items-center text-center gap-3">
-              <h1 className="text-lg  cursor-pointer text-white">Home</h1>
-              <h1 className="text-lg  cursor-pointer text-white">About</h1>
-              <h1 className="text-lg  cursor-pointer text-white">Popular</h1>
-              <h1 className="text-lg  cursor-pointer text-white">Feature</h1>
+              <Link href={"/"} className="text-lg  cursor-pointer text-white">
+                Home
+              </Link>
+              <Link
+                href={"/about"}
+                className="text-lg  cursor-pointer text-white"
+              >
+                About
+              </Link>
+              <Link
+                href={"/popular"}
+                className="text-lg  cursor-pointer text-white"
+              >
+                Popular
+              </Link>
+              <Link
+                href={"/featire"}
+                className="text-lg  cursor-pointer text-white"
+              >
+                Feature
+              </Link>
             </div>
           </div>
           <button className="md:hidden text-slate-800" onClick={toggleMenu}>

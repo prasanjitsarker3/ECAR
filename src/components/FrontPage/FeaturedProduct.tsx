@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const FeaturedProduct: React.FC = () => {
@@ -78,15 +79,6 @@ const FeaturedProduct: React.FC = () => {
       range: "7000",
       img: "/car8.png",
     },
-    {
-      id: 9,
-      model: "Ford Mustang Mach-E GT",
-      acceleration: "3.5 Sec",
-      topSpeed: "200 Km/h",
-      type: "Electric",
-      range: "5000",
-      img: "/car1.png",
-    },
   ];
 
   const filteredData =
@@ -113,7 +105,7 @@ const FeaturedProduct: React.FC = () => {
               onClick={() => setActiveTab(tab)}
               className={`px-4 py-2 rounded-xl ${
                 activeTab === tab
-                  ? " bg-white text-blue-700"
+                  ? " backdrop-blur-md bg-white/10 text-white"
                   : " border border-white text-white"
               }`}
             >
@@ -124,25 +116,29 @@ const FeaturedProduct: React.FC = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mt-4 text-white">
         {filteredData.map((car) => (
-          <div key={car.id} className="border p-5 rounded shadow-md">
-            <h2 className="text-lg font-semibold">{car.model}</h2>
-            <div className=" flex justify-center items-center">
+          <div
+            key={car.id}
+            className="border border-white/10 p-5 rounded transition-all duration-300 hover:backdrop-blur-md hover:bg-white/20"
+          >
+            <div className="flex justify-center items-center">
               <Image
                 src={car.img}
                 alt={car.model}
                 width={300}
                 height={300}
-                className=" object-cover mb-4"
+                className="object-cover mb-4"
               />
             </div>
-
-            <div className=" flex justify-between items-center pb-3">
-              <p>Acceleration: {car.acceleration}</p>
+            <h2 className="text-lg font-semibold">{car.model}</h2>
+            <div className="flex justify-between items-center pb-3">
+              <p>Acc: {car.acceleration}</p>
               <p>Speed: {car.topSpeed}</p>
             </div>
-            <button className=" border border-white rounded-full w-full py-2 ">
-              See Details
-            </button>
+            <Link href={`/product/${car.id}`}>
+              <button className="border border-white/10 rounded-full w-full py-2 transition-all duration-300 hover:bg-white hover:text-black">
+                See Details
+              </button>
+            </Link>
           </div>
         ))}
       </div>

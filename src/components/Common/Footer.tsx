@@ -4,9 +4,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className=" bg-slate-900">
-      <div className=" w-full container mx-auto md:px-0 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white py-8">
+    <div className=" bg-[#0B0F12] ">
+      <div className=" w-full container mx-auto md:px-0 px-4 backdrop-blur-md bg-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white py-8 px-4">
           {/* Column 1: About */}
           <div>
             <h3 className="text-xl font-bold mb-4">About Us</h3>

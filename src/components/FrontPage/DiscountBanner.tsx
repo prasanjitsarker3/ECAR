@@ -13,7 +13,7 @@ const DiscountBanner = () => {
               Do You Want To Receive
             </h1>
             <h1 className=" vigaRegular md:text-start text-center font-medium text-5xl text-white space-x-3 ">
-              <span className=" primaryColor vigaRegular">30%</span>
+              <span className="  vigaRegular">30%</span>
               Off for New Customers
             </h1>
             <p className=" text-white">
@@ -21,10 +21,10 @@ const DiscountBanner = () => {
               new cars by email by subscribing to our mailing list.
             </p>
             <div className=" flex items-center">
-              <button className=" primaryColorBg text-white px-12 py-3 rounded-full">
+              <button className=" backdrop-blur-md bg-white/5 text-white px-12 py-3 rounded-full">
                 Shop Now
               </button>
-              <div className=" h-12 w-12 flex justify-center items-center primaryColorBg text-white rounded-full">
+              <div className=" h-12 w-12 flex justify-center items-center backdrop-blur-md bg-white/5 text-white rounded-full">
                 <MoveUpRight />
               </div>
             </div>

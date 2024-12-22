@@ -31,20 +31,25 @@ const CarBrand = () => {
   ];
 
   return (
-    <div className=" w-full container mx-auto md:px-8 px-4 py-8">
-      <div className=" grid grid-cols-2 md:grid-cols-5 gap-12">
+    <div className="w-full container mx-auto md:px-8 px-4 py-16">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-12">
         {carBrandData?.map((data) => (
-          <div key={data.id} className="border border-white p-5">
-            <div className=" h-40">
+          <div
+            key={data.id}
+            className="p-5 rounded-lg backdrop-blur-md bg-white/5"
+          >
+            <div className="h-32">
               <Image
                 src={data.image}
-                alt=""
+                alt={data.name}
                 width={300}
                 height={300}
-                className=" object-cover h-full w-full"
+                className="object-cover h-full w-full"
               />
             </div>
-            <h1 className=" text-center text-white text-lg">{data.name}</h1>
+            <h1 className="text-center text-white text-lg mt-4 font-semibold">
+              {data.name}
+            </h1>
           </div>
         ))}
       </div>

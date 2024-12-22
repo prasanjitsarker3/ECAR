@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import React from "react";
+import Link from "next/link";
 
 const FutureBanner = () => {
   return (
@@ -40,9 +41,11 @@ const FutureBanner = () => {
               machines. Embrace innovation, speed, and efficiency like never
               before.
             </p>
-            <button className="bg-blue-800 w-44 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300">
-              Know More
-            </button>
+            <Link href={`/product/${1}`}>
+              <button className=" backdrop-blur-md bg-white/5 w-44 text-white py-2 px-6 rounded-lg transition duration-300">
+                Know More
+              </button>
+            </Link>
           </motion.div>
         </div>
       </div>

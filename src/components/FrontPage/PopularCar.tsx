@@ -3,6 +3,7 @@ import { useState } from "react";
 import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md"; // Lucid-style icons for arrows
 import Image from "next/image";
 import { ShoppingBag } from "lucide-react";
+import Link from "next/link";
 
 const PopularCar = () => {
   const carData = [
@@ -120,8 +121,8 @@ const PopularCar = () => {
         </button>
         <div className="grid grid-cols-3 gap-12 px-8">
           {carData.slice(currentIndex, currentIndex + 3).map((data) => (
-            <div key={data.id}>
-              <div className="rounded-lg overflow-hidden border border-white text-white p-5">
+            <Link href={`/product/${1}`} key={data.id}>
+              <div className="rounded-lg overflow-hidden backdrop-blur-md bg-white/5 text-white p-5">
                 <h1 className=" px-4">{data.model}</h1>
                 <Image
                   src={data.img}
@@ -141,7 +142,7 @@ const PopularCar = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <button
